@@ -53,7 +53,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--bg-green);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
   position: fixed;
   padding: 20px 60px;
   top: 0;
@@ -545,4 +546,36 @@ h3 span {
 
 .card a:hover span {
   transform: translateX(4px);
+}
+
+/*Join Section*/
+
+/* ====== CENTER CONTAINER ====== */
+.galaxy-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+
+.center-avatar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #00bfff;
+  box-shadow: 0 0 40px #00bfff;
+  margin: 30px auto;
+  margin-bottom: 90px;
+}
+
+.center-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
