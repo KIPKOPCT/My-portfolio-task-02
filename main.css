@@ -735,6 +735,11 @@ h3 span {
   margin-top: 10px;
 }
 
+.faq-answer p {
+  margin-top: 20px;
+  object-fit: fill;
+}
+
 .faq-item.active .arrow {
   transform: rotate(180deg);
 }
@@ -812,7 +817,6 @@ h3 span {
   -webkit-backdrop-filter: blur(40px);
   backdrop-filter: blur(40px);
   border-radius: 50%;
-  backdrop-filter: blur(5px);
   z-index: 0;
 }
 
@@ -883,4 +887,241 @@ h3 span {
   text-decoration: none;
   padding: 10px 40px;
   border-radius: 100px;
+}
+
+/********************Service styles********************/
+
+.graphic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 150px;
+  margin-bottom: 60px;
+  gap: 2rem;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 20px 0;
+  border-radius: 20px;
+  width: 350px;
+  background: #0d9b2c1a;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  
+}
+
+
+.logo-items img {
+  width: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: 1s ease-in-out;
+}
+.logo-items img:hover {
+  width: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 1s ease;
+}
+
+.developer-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 20px 0;
+  border-radius: 20px;
+  width: 550px;
+  background: #0d9b2c1a;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  
+}
+
+.developer-items img{
+  width: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: 1s ease-in-out;
+}
+.developer-items img:hover{
+  width: 520px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 1s ease;
+}
+
+
+
+
+
+
+
+/* Contact Section */
+.contact {
+  padding: 80px;
+  background-color: #0d9b2c1a;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  margin-top: 60px;
+  margin-bottom: 60px;
+  
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+}
+
+.container-c {
+  background-color: #8EBF25;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.contact-form-section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  color: #f0faf0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background-color: #fdfdfd;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  color: #010D01;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #00ff88;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888888;
+
+}
+
+.contact-form select {
+  color: #888888;
+  cursor: pointer;
+}
+
+.contact-form select option {
+  background-color: #AEDCB3;
+  color: #888888
+}
+
+.contact-button {
+  background-color: #010D01;
+  border: none;
+  padding: 15px 60px;
+  border-radius: 500px;
+  margin-bottom: 20px;
+  color: var(--green);
+  font-size: 18px;
+  transition: 1s ease-in-out;
+}
+.contact-button:hover {
+  background-color: #383d38;
+  transition: 1s ease;
+
+}
+
+.contact-info {
+  background-color: var(--dark-green);
+  border-radius: 30px;
+}
+
+.contact-card {
+  background-color: #010D01;
+  padding: 80px 30px;
+  border-radius: 50px;
+  height: fit-content;
+}
+
+.contact-card h3 {
+  color: #8EBF25;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.contact-card h3:first-child {
+  margin-top: 0;
+}
+
+.contact-card p {
+  color: var(--black);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+
+}
+
+.social-icon a img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--green);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
 }
