@@ -562,7 +562,7 @@ h3 span {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #95E718;
+  border: 10px dotted #95E718;
   width: 1500px;
   height: 1500px;
   border-radius: 100%;
@@ -573,7 +573,7 @@ h3 span {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #95E718;
+  border: 10px dotted #95E718;
   width: 1000px;
   height: 1000px;
   border-radius: 100%;
@@ -670,6 +670,7 @@ h3 span {
   flex-direction: column;
   margin-bottom: 60px;
 }
+
 
 .faq {
   width: 1500px;
