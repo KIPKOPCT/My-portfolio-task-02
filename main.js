@@ -172,48 +172,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(style);
 });
 
-
-
-// Auto sliding animation for review cards to the right
-document.addEventListener('DOMContentLoaded', function() {
-    // Review cards sliding
-    const reviewContainer = document.querySelector('.review-items');
-    const reviewBoxes = document.querySelectorAll('.review-box');
-    
-    if (reviewContainer && reviewBoxes.length > 0) {
-        // Duplicate the review boxes for seamless looping
-        reviewBoxes.forEach(box => {
-            const clone = box.cloneNode(true);
-            reviewContainer.appendChild(clone);
-        });
-        
-        // Apply smooth animation after duplication
-        const style = document.createElement('style');
-        style.textContent = `
-            .review-items {
-                display: flex;
-                gap: 20px;
-                animation: slideRightReview 30s linear infinite;
-            }
-            .review-box {
-                flex: 0 0 auto;
-                width: 350px;
-            }
-            @keyframes slideRightReview {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(calc(-50%));
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-});
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const galCycle = document.querySelector('.gal-cycle');
     const galCycle2 = document.querySelector('.gal-cycle2');
@@ -259,3 +217,74 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Create mobile navigation elements
+    const mobileNav = document.createElement('nav');
+    mobileNav.className = 'mobile-nav';
+    
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    
+    // Clone the navigation content from desktop
+    const desktopNav = document.querySelector('.desktop-nav');
+    if (desktopNav) {
+        const navContent = desktopNav.innerHTML;
+        mobileNav.innerHTML = navContent;
+        
+        // Also clone the Get Started button for mobile
+        const getStartedBtn = document.querySelector('.btn').cloneNode(true);
+        mobileNav.appendChild(getStartedBtn);
+    }
+    
+    // Add elements to the body
+    document.body.appendChild(mobileNav);
+    document.body.appendChild(overlay);
+    
+    // Get the mobile menu button
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+        mobileNav.classList.toggle('active');
+        overlay.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+    
+    // Event Listeners
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+    
+    overlay.addEventListener('click', toggleMobileMenu);
+    
+    // Close menu when clicking on a link
+    const mobileLinks = mobileNav.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                toggleMobileMenu();
+            }
+        });
+    });
+    
+    // Close menu on ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+            toggleMobileMenu();
+        }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && mobileNav.classList.contains('active')) {
+            toggleMobileMenu();
+        }
+    });
+});
+
+
+
